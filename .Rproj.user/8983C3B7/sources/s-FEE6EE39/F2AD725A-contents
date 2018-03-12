@@ -1,0 +1,45 @@
+---
+title: "Worksheet 8/14: Getting comfortable with GitHub"
+subtitle: "MBio 691D"
+author: "Lindsay Veazey"
+date: "March 13, 2018"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Intro + setting up for next week and beyond
+
+This week I've put together some exercises that build on last week's initial setup and syncing of your laptop, R, and your GitHub account. We'll be walking through some exercises that will increase your familiarity with the facilities GitHub has to offer. Next week, we'll add on even more and run through a basic workflow that you could emulate for your research, and following that, I'll have everyone work in small groups to simulate collaborations using these resources. 
+
+Exciting things to come, so let's get to it.
+
+## Glossary
+
+Here are some terms we'll be using repeatedly for today's exercises- you'll recognize some:
+
+*Blame*: This is an extremely helpful feature that makes Git/GitHub so cool. The blame feature let's you see the last revision in a series of updates that may have led to an error message or other change of interest.
+
+*Branch*: An (initially) identical version of a repository. It is contained within the repository but doesn't affect the master branch. The offline term for this is...
+
+*Clone*: This is 1) a copy of a repository that exists on your laptop, or 2) the action of making that copy. You can make changes to a clone without affecting the master branch.
+
+*Commit*: ...aka, a revision to a file/set of files. It's essentially Save 2.0: when you commit a change, Git created a unique identifier that easily records the who, what, and when of the file change. Commits have a commit message you write to succinctly describe any changes.
+
+*Pull*: When you pull a file, you ask Git to fetch and merge the most updated version of that file to your system, which is really helpful when youve been working on different machines or need the latest edits from a collaborator.
+
+*Push*: You make changes to a file locally and save (commit) them, and then push those changes to a remote repository (your GitHub account) so they are stored in the cloud and accessible on other machines.
+
+*Revert*: Undo a commit (your last saved changes) on your branch.
+
+## Cloning a repository
+
+## Reverting a commit
+
+```{r eval=FALSE, include=TRUE}
+citation('phyloseq')
+```
+## Review:
+- You practiced using more facilities that GitHub offers and increased your comfort and familiarity with the site and your laptop's app (GH Desktop).

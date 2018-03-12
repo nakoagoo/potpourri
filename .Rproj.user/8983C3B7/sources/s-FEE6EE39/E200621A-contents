@@ -1,0 +1,151 @@
+---
+title: "Worksheet 7/14: GitHub intro"
+subtitle: "MBio 691D"
+author: "Lindsay Veazey"
+date: "March 6, 2018"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+chooseCRANmirror(graphics=FALSE, ind=1)
+knitr::opts_chunk$set(echo = TRUE)
+```
+Remember, if you are new to class, make sure you reference worksheet 1 to install R Studio.
+
+## Installing Git
+
+- Navigate to https://gitforwindows.org/ and download the executable file.
+
+## Installing GitHub Desktop
+
+- Navigate to https://desktop.github.com/ and click 'Download for Windows (64 bit)'.
+
+- 'Save file' and wait for the download to finish.
+
+## Some background on Git/GitHub while your files download...
+
+**What is Git?** Git is a type of (free!) version control system software that allows you to track changes that you and/or your collaborators make to files. Git is installed on our local machines (that download that's happening in the background right now). Fun fact: Git was developed by Linus Torvalds, a software engineer who created and largely developed the Linux kernel (OS), which is also used by Google for its Android OS. And as of late 2017, all 500 of the world's most powerful supercomputers run Linux. Here's his wiki: https://en.wikipedia.org/wiki/Linus_Torvalds ...and what have you done lately??
+
+From the Git wiki: "Torvalds quipped about the name git (which means unpleasant person in British English slang): *I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'*. The main page describes Git as 'the stupid content tracker' and the name as:
+
+ - random three-letter combination that is pronounceable, and not actually used by any common UNIX command. The fact that it is a mispronunciation of 'get' may or may not be relevant.
+ - stupid. contemptible and despicable. simple. Take your pick from the dictionary of slang.
+ - 'global information tracker': you're in a good mood, and it actually works for you. Angels sing, and a light suddenly fills the room.
+ - 'goddamn idiotic truckload of shit': when it breaks"
+ 
+So, if Git is a type of software installed on our personal laptops, how are we able to collaborate with others? 
+
+**What is GitHub?** GitHub =/= Git. Directly from their wiki: "GitHub is a web-based hosting service for version control using git. It is mostly used for computer code. It offers all of the distributed version control and source code management functionality of Git as well as adding its own features." GitHub allows us to store our work and/or collaborate in the cloud. GitHub *helps us use Git*. And GitHub Desktop (an application) helps us use GitHub.
+
+## Setting up your GitHub account and first repository
+
+
+- Select the executable (.exe) file in your Downloads folder.
+
+- Select 'Create your free account' and enter your details, or sign into your existing account (if you have one).
+
+Before we proceed, let's review the answer to this question: **What is a repository?** A repository is simply a location where you manage and store- or "deposit"- data. You've been using repositories for ages. Google Drive, Dropbox, a folder on your desktop- these are all repositories.
+
+- You'll now see three options: create, add, and clone. You may want to *create* an entirely new repository, or *add* an existing repository, or *clone* a repository that already exists in your GitHub account. 
+    - We are going to *create* a new repository: create a folder labeled 'MBio691D' and specify the Notes (i.e., 'class exercises') and local path of your choice. Leave other options as 'None'.
+    - For those of us who already have an account and repositories, GitHub Desktop will automatically populate your existing repositories online and you can choose to clone them to your local drive.
+    
+You should now see a blank page that looks like this: INSERT FIG 1
+
+Your newly created repository, 'MBio691D', is listed under a heading called 'Other'. It's under this tab because it's on your local machine, not GitHub (yet).
+
+No changes have been made and the page is blank because there is (almost) nothing in the repository. To confirm that, you can navigate to the pathway you specified as this repository and see for yourself. You can click 'open this repository in Explorer' to do that.
+
+- Next, click the tab that says 'History'. You'll see a hidden file called '.gitattributes'. Git automatically generates this file when we create a new repository to remind itself how to manage files within this repository. You can ignore it.
+
+- Now, manually navigate to your newly created repository folder on your drive (outside of the GitHub Desktop app). 
+
+- Create a new file in this repository. Any file will do; I suggest a simple text file called "test". I did this by right clicking in Explorer and creating a new text file with this name.
+
+- Return to your GitHub Desktop app. You'll see that your text file was added under the 'Changes' tab. The green + indicates that this file has been added to the repository, but it hasn't been *committed* yet. We need to *commit* test.txt to the master (main) branch.
+
+- In the Summary header, type something like 'test file commit'- then go ahead and click 'Commit to master'.
+
+- Now you'll see that the 'Changes' tab reflects that there are no new changes since this most recent commit. Under the 'History' tab, you can select either your initial commit or your latest commit. 
+
+## Publish a repository to GitHub
+
+INSERT FIG 2
+
+- Click 'Publish this repository to GitHub'.
+
+- Uncheck 'Keep this code private'. You have to pay for this option.
+
+- Click 'Publish repository'. You'll see the syncing wheel spin as it communicates with the cloud and publishes your new repository to your GitHub account page.
+
+- Navigate to your GitHub page (the address is something like https://github.com/yourusername ). You'll see your new repository, nicely synced from the GitHub Desktop application. Go ahead and click on it, and you'll land on a page like this:
+
+INSERT FIG 3
+
+- Select 'Create new file' and name it something like 'Test2' or another name.
+
+INSERT FIG 4
+
+- Scroll down and commit the changes.
+
+- Return to your GitHub Desktop app and click 'Fetch origin', and once it syncs, pull the update into your app. You'll see your new dummy file 'Test2' appear in your local repository.
+
+Great! You've just created a new repository and practiced creating, committing, and syncing (pushing) files in between your local repository and the cloud (your github.com page). This is how Git (software), GitHub (cloud-based site), and GitHub Desktop (application on your local machine) work together. We'll do more in the coming weeks.
+
+## Integrating GitHub and R Studio
+
+
+- Open R Studio:
+	- File -> New Project; select an existing repository for your work (the MBio691D repository we just created). Select 'Create Project'.
+INSERT FIG 5
+	- Tools -> Version Control -> Project Setup -> ensure 'Git' is selected under Git/SVN. 
+INSERT FIG 6
+	- Tools -> Global Options -> Git/SVN; ensure path to Git executable (.exe file) is correct (you can manually check by navigating to the selected directory; it should auto detect this). Ignore the SVN executable field.
+	- Create RSA key -> (creating a passcode is optional) -> Create.
+	- Close window.
+	- Click 'View public key' -> copy your key and paste in a notes application and save somewhere reliable.
+
+- Navigate to your GitHub account.
+
+- Open your account settings -> click the SSH keys tab.
+INSERT FIG 7
+
+- Click 'Add SSH key' and paste in the public key you copied.
+
+- Now you need to tell Git (the software on your local machine) your GitHub (cloud repository) details. Navigate to R Studio -> Tools -> Shell and insert something like this (your details, though)... 
+INSERT FIG 8 
+...again, use your own details, and you'll type: 
+git config --global user.email "myemail@email.com"
+git config --global user.name "myusername"
+
+## Push an R project to your GitHub page
+
+- Now it's time for the grand finale (for today), which involves creating an R script, committing it to your local repository, then pushing it to your GitHub page. Create a dummy script. Mine is called 'matrixFun' and is saved with the .R extension because it's an R script I may want to use later. I typed:
+
+```{r eval=FALSE, include=TRUE}
+a <- matrix(data = 1:12, nrow = 4, ncol = 3)
+b <- apply(a, 1, function(x) sqrt(x))
+```
+
+...and saved to my active /GitHub/MBio691D repository.
+
+- You will see it instantaneously appear on the right: 
+
+INSERT FIG 9
+
+- Navigate to the GitHub Desktop app and click the 'Changes' tab. GitHub Desktop sees that you've made some changes in your repository. Write something like 'New R script' in the Summary field (bottom left) -> click 'Commit to master'.
+
+- Then click 'Push to origin'. Wait for it...
+
+- Navigate to your GitHub account page and click the MBio691D repository you created. It may take a moment, but you should see some new files there: 1) a '.gitignore' file, which Git automatically generates and reminds itself to ignore commands in the R language in that lovely .R script you just committed; and 2) the .R script. You can click on each to see the guts, if you like.
+
+- Your R GUI (Graphic User Interface; here, R Studio) and your GitHub GUI (GitHub Desktop) are now synced, and we can look forward to many productive years of pushing, pulling, committing, deleting, forking, and branching between the two. 
+
+## Review:
+
+- You learned a bit more about Git vs. GitHub vs. GitHub Desktop and how they are all connected
+- You installed Git, GitHub Desktop
+- You set up your GitHub account
+- You linked R Studio and Git/GitHub/GitHub Desktop
+- You committed some test files on your local machine and pushed to your GitHub site
+- You pushed a new .R file to your GitHub site through R Studio
