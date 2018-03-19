@@ -5,10 +5,10 @@
 
 ##########################################################################################################
 
-install.packages('taxa')
+# This is an in-development version on the GH page: https://github.com/ropensci/taxa 
+devtools::install_github("ropensci/taxa") # This download is a bit slow for me as of now- may be my home network..
+# install.packages('taxa') # Try only if ^this fails
 library(taxa)
-# There is an in-development version on the GH page: https://github.com/ropensci/taxa 
-
 ## Classes in {taxa}
 
 # {taxa} defines some basic taxonomic classes and functions to manipulate them using other packages in R. 
@@ -131,4 +131,10 @@ pop(pumaHier, ranks("family"))
 # Keep all taxa greater than or equal to a taxonomic level using span().
 span(pumaHier, ranks(">= genus"))
 
+### Cool- here's the end of this brief tutorial on {taxa}. 
 
+# Now, because you all may issue identical pull requests, here is a unique simple edit you can make:
+
+class.list <- as.list(c('lindsay')) # Add your name, and I can accept and merge these unique additions.
+
+## Return to worksheet 9.
