@@ -1,0 +1,12 @@
+### Exercises for GitHub class 3/20
+
+## Editing a file
+# Create dummy data
+df <- data.frame(Name = c('Lindsay'), Height = c('69'), ShoeSize = c('9.5'))
+df
+
+# Go ahead and add your info to our data frame. Example edit:
+# df <- data.frame(Name = c('Lindsay', 'Prudence'), Height = c('69', '7'), ShoeSize = c('9.5', '0')) # Prudence is my cat
+
+## {taxa} tutorial: part I
+# 
