@@ -138,3 +138,5 @@ span(pumaHier, ranks(">= genus"))
 class.list <- as.list(c('lindsay')) # Add your name, and I can accept and merge these unique additions.
 
 ## Return to worksheet 9.
+
+###
