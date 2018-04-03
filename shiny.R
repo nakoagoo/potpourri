@@ -345,7 +345,7 @@ ui = fluidPage( #  Hint: Style rule #8
 # Run the app. Ooh, nice slider. 
 # Now paste this code ^ into your R console, and then paste this into the console (not the app):
 
-print (ui) #  Hint: Style rule #5
+print(ui) #  Hint: Style rule #5
 
 # By printing the ui here, we can see how ugly HTML would be to type raw. Thanks, Shiny!
 
@@ -383,7 +383,7 @@ mainPanel(
   p("A new p() command starts a new paragraph. Supply a style attribute to change the format of the entire paragraph.", style = "font-family: 'times'; font-si16pt"),
   strong("strong() bolds your text."),
   em("em() creates italicized (i.e, EMphasized) text.")
-  
+)
 # Run the app, see how your commands added and formatted your text.
 
 ## Add an image
@@ -397,9 +397,9 @@ mainPanel(
 # Replace your mainPanel() with:
 mainPanel(
   plotOutput(outputId = "distPlot"), #  We want to output a histogram
-  img(src = "bison.jpg", height = 170, width = 296),
+  img(src = "geyser.jpg", height = 170, width = 296),
   p("bison beware")
-  
+)
 ## Check your code against mine:
 
 library(shiny)
