@@ -125,8 +125,9 @@ fluidRow(
          column(width = 3, offset = 2,
                 "Another formatting example"
          )
-  )
+    )
 )
+
 
 # Add some UI into sidebarPanel and mainPanel, run the app, notice the changes.
 # All UI functions are HTML wrappers in diguise. Shiny lets you run these without prior knowledge of HTML.
@@ -153,7 +154,7 @@ print (ui) #  Hint: Style rule #5
 # Replace your sidebarPanel() with the following code. Keep mainPanel() as-is.
 # These values are from the price data in the .csv.
 sidebarPanel(sliderInput("priceInput", "Price", 
-                         min = 0, max = 100;value = c(25, 40), pre = "$"), #  Hint: Style rule #9
+                         min = 0, max = 100, value = c(25, 40), pre = "$"), #  Hint: Style rule #9
              
              # Hold off on running the app as we continue to add stuff here- it won't work yet.
              
